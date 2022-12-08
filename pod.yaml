@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kpt-tech
+  name: kpt
   namespace: tech-session
   labels:
-    app: kpt-tech
+    app: kpt
 spec:
   selector:
     matchLabels:
-      app: kpt-tech
+      app: kpt
   template:
     metadata:
       labels:
-        app: kpt-tech
+        app: kpt
     spec:
       containers:
         - name: kpt

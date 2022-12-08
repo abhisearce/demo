@@ -6,6 +6,7 @@ pipeline:
   mutators:
     - image: gcr.io/kpt-fn/search-replace:unstable
       configMap:
+        by-path: metadata.name
         by-value: kpt
         put-value: kpt-tech
     - image: gcr.io/kpt-fn/set-labels:v0.1
@@ -14,9 +15,11 @@ pipeline:
     - image: gcr.io/kpt-fn/set-namespace:unstable
       configMap:
         namespace: kpt-tech
+    - image: gcr.io/kpt-fn/apply-replacements:unstable
+      configPath: replacements.yaml
   validators:
     - image: gcr.io/kpt-fn/kubeval:v0.3
 inventory:
-  namespace: default
+  namespace: tech-session
   name: inventory-06751723
   inventoryID: 8218d5c0cb1924f620b501082d52bf85d5503c06-1670333327037317494
