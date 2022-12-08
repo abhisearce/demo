@@ -4,15 +4,15 @@ metadata:
   name: kpt-tech
   namespace: default
   labels:
-    app: kpt-tech
+    app: dry-run
 spec:
   selector:
     matchLabels:
-      app: kpt-tech
+      app: dry-run
   template:
     metadata:
       labels:
-        app: kpt-tech
+        app: dry-run
     spec:
       containers:
         - name: kpt-tech

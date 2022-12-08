@@ -5,12 +5,12 @@ metadata:
   namespace: example-ns
   labels:
     type: demo
-    app: kpt-tech
+    app: dry-run
 spec:
   type: LoadBalancer
   selector:
     type: demo
-    app: kpt-tech
+    app: dry-run
   ports:
     - name: http
       protocol: TCP

@@ -8,6 +8,12 @@ pipeline:
       configMap:
         by-value: kpt
         put-value: kpt-tech
+    - image: gcr.io/kpt-fn/set-labels:v0.1
+      configMap:
+        app: tech
+    - image: gcr.io/kpt-fn/set-namespace:unstable
+      configMap:
+        namespace: kpt-tech
   validators:
     - image: gcr.io/kpt-fn/kubeval:v0.3
 inventory:
