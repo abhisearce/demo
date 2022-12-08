@@ -1,0 +1,16 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: kpt-tech
+pipeline:
+  mutators:
+    - image: gcr.io/kpt-fn/search-replace:unstable
+      configMap:
+        by-value: kpt
+        put-value: kpt-tech
+  validators:
+    - image: gcr.io/kpt-fn/kubeval:v0.3
+inventory:
+  namespace: default
+  name: inventory-06751723
+  inventoryID: 8218d5c0cb1924f620b501082d52bf85d5503c06-1670333327037317494

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kpt-tech
+  namespace: example-ns
+  labels:
+    type: demo
+    app: kpt-tech
+spec:
+  type: LoadBalancer
+  selector:
+    type: demo
+    app: kpt-tech
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
